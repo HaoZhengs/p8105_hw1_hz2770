@@ -73,3 +73,6 @@ Then we generate the scatter plot of `flipper_length_mm`(y) vs `bill_length_mm`(
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = "red")) + geom_point()
 ```
 
+```{r}
+ggsave("scatter_plot.png")
+```
