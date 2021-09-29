@@ -25,19 +25,26 @@ example_df = tibble(
 Then take the mean of each variable and see what will happen.
 
 ```{r}
-x = mean(pull(example_df,norm_samp))
-x
+x = pull(example_df,norm_samp)
+mean(x)
 
-y = mean(pull(example_df,vec_logical))
-y
+y = pull(example_df,vec_logical)
+mean(y)
 
-z = mean(pull(example_df,vec_char))
-z
+z = pull(example_df,vec_char)
+mean(z)
 
-w = mean(pull(example_df,vec_factor))
-w
+w = pull(example_df,vec_factor)
+mean(w)
 ```
 
+Oops! We can only take the mean of the numeric and logical value in the dataframe, why is that?
+
+Let's try to apply as.numeric() fuction on all the variables.
+
+```{r, eval=FALSE}
+
+```
 
 
 

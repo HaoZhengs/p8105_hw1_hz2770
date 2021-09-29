@@ -190,22 +190,22 @@ pre code {
   vec_factor =c(&quot;low&quot;,&quot;medium&quot;,&quot;low&quot;,&quot;high&quot;,&quot;high&quot;,&quot;medium&quot;,&quot;low&quot;,&quot;high&quot;,&quot;medium&quot;,&quot;medium&quot;)
 )</code></pre>
 <p>Then take the mean of each variable and see what will happen.</p>
-<pre class="r"><code>x = mean(pull(example_df,norm_samp))
-x</code></pre>
-<pre><code>## [1] -0.3401146</code></pre>
-<pre class="r"><code>y = mean(pull(example_df,vec_logical))
-y</code></pre>
+<pre class="r"><code>x = pull(example_df,norm_samp)
+mean(x)</code></pre>
+<pre><code>## [1] -0.1806234</code></pre>
+<pre class="r"><code>y = pull(example_df,vec_logical)
+mean(y)</code></pre>
 <pre><code>## [1] 0.4</code></pre>
-<pre class="r"><code>z = mean(pull(example_df,vec_char))</code></pre>
-<pre><code>## Warning in mean.default(pull(example_df, vec_char)): argument is not numeric or
-## logical: returning NA</code></pre>
-<pre class="r"><code>z</code></pre>
+<pre class="r"><code>z = pull(example_df,vec_char)
+mean(z)</code></pre>
+<pre><code>## Warning in mean.default(z): argument is not numeric or logical: returning NA</code></pre>
 <pre><code>## [1] NA</code></pre>
-<pre class="r"><code>w = mean(pull(example_df,vec_factor))</code></pre>
-<pre><code>## Warning in mean.default(pull(example_df, vec_factor)): argument is not numeric
-## or logical: returning NA</code></pre>
-<pre class="r"><code>w</code></pre>
+<pre class="r"><code>w = pull(example_df,vec_factor)
+mean(w)</code></pre>
+<pre><code>## Warning in mean.default(w): argument is not numeric or logical: returning NA</code></pre>
 <pre><code>## [1] NA</code></pre>
+<p>Oops! We can only take the mean of the numeric and logical value in the dataframe, why is that?</p>
+<p>Let’s try to apply as.numeric() fuction on all the variables.</p>
 </div>
 
 
