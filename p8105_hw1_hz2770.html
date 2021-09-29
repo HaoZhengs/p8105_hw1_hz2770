@@ -180,8 +180,8 @@ pre code {
 <pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
-<div id="problem-1" class="section level1">
-<h1>Problem 1</h1>
+<div id="problem-1" class="section level2">
+<h2>Problem 1</h2>
 <p>This is a dataframe which contains four variables.</p>
 <pre class="r"><code>example_df = tibble(
   norm_samp = rnorm(10),
@@ -192,7 +192,7 @@ pre code {
 <p>Then take the mean of each variable and see what will happen.</p>
 <pre class="r"><code>x = pull(example_df,norm_samp)
 mean(x)</code></pre>
-<pre><code>## [1] -0.3709393</code></pre>
+<pre><code>## [1] -0.2024023</code></pre>
 <pre class="r"><code>y = pull(example_df,vec_logical)
 mean(y)</code></pre>
 <pre><code>## [1] 0.4</code></pre>
@@ -214,6 +214,12 @@ as.numeric(z)
 
 as.numeric(w)</code></pre>
 <p>We can see from above that besides the numeric varible norm_samp, the logical variable can be view as the numerical values 0 or 1. Therefore, we only can take the mean of numeric and logical variables. Character and factor variables can not be viewed as numeric values, so we can’t take their mean.</p>
+</div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
+<p>First, download a package containing the penguins dataset in the console.</p>
+<pre class="r"><code># load the penguins dataset
+data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)</code></pre>
 </div>
 
 
