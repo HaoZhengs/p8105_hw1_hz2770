@@ -17,10 +17,27 @@ This is a dataframe which contains four variables.
 example_df = tibble(
   norm_samp = rnorm(10),
   vec_logical = norm_samp > 0,
-  vec_char = character(10),
+  vec_char = c("v","i","c","t","o","r","i","a","t","h"),
   vec_factor =c("low","medium","low","high","high","medium","low","high","medium","medium")
 )
 ```
+
+Then take the mean of each variable and see what will happen.
+
+```{r}
+x = mean(pull(example_df,norm_samp))
+x
+
+y = mean(pull(example_df,vec_logical))
+y
+
+z = mean(pull(example_df,vec_char))
+z
+
+w = mean(pull(example_df,vec_factor))
+w
+```
+
 
 
 

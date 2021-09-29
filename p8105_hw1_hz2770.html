@@ -186,9 +186,26 @@ pre code {
 <pre class="r"><code>example_df = tibble(
   norm_samp = rnorm(10),
   vec_logical = norm_samp &gt; 0,
-  vec_char = character(10),
+  vec_char = c(&quot;v&quot;,&quot;i&quot;,&quot;c&quot;,&quot;t&quot;,&quot;o&quot;,&quot;r&quot;,&quot;i&quot;,&quot;a&quot;,&quot;t&quot;,&quot;h&quot;),
   vec_factor =c(&quot;low&quot;,&quot;medium&quot;,&quot;low&quot;,&quot;high&quot;,&quot;high&quot;,&quot;medium&quot;,&quot;low&quot;,&quot;high&quot;,&quot;medium&quot;,&quot;medium&quot;)
 )</code></pre>
+<p>Then take the mean of each variable and see what will happen.</p>
+<pre class="r"><code>x = mean(pull(example_df,norm_samp))
+x</code></pre>
+<pre><code>## [1] -0.3401146</code></pre>
+<pre class="r"><code>y = mean(pull(example_df,vec_logical))
+y</code></pre>
+<pre><code>## [1] 0.4</code></pre>
+<pre class="r"><code>z = mean(pull(example_df,vec_char))</code></pre>
+<pre><code>## Warning in mean.default(pull(example_df, vec_char)): argument is not numeric or
+## logical: returning NA</code></pre>
+<pre class="r"><code>z</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>w = mean(pull(example_df,vec_factor))</code></pre>
+<pre><code>## Warning in mean.default(pull(example_df, vec_factor)): argument is not numeric
+## or logical: returning NA</code></pre>
+<pre class="r"><code>w</code></pre>
+<pre><code>## [1] NA</code></pre>
 </div>
 
 
