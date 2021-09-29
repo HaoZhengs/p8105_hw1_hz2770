@@ -192,7 +192,7 @@ pre code {
 <p>Then take the mean of each variable and see what will happen.</p>
 <pre class="r"><code>x = pull(example_df,norm_samp)
 mean(x)</code></pre>
-<pre><code>## [1] -0.2024023</code></pre>
+<pre><code>## [1] -0.1144275</code></pre>
 <pre class="r"><code>y = pull(example_df,vec_logical)
 mean(y)</code></pre>
 <pre><code>## [1] 0.4</code></pre>
@@ -217,9 +217,11 @@ as.numeric(w)</code></pre>
 </div>
 <div id="problem-2" class="section level2">
 <h2>Problem 2</h2>
-<p>First, download a package containing the penguins dataset in the console.</p>
+<p>First, download a package containing the penguins dataset in the console. Then load this dataset.</p>
 <pre class="r"><code># load the penguins dataset
 data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)</code></pre>
+<p>The dataset penguins contains 8 variables, among which, “species” and “island” are character variables; “bill_length_mm”, “bill_depth_mm”, “flipper_length_mm”, “body_mass_g” and “year” are numeric variables; “sex” is factor variable.</p>
+<p>For the size of this dataset, <code>nrow = 344</code>, and <code>ncol = 8</code>, mean flipper length is 200.9152047.</p>
 </div>
 
 

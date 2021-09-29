@@ -58,9 +58,11 @@ We can see from above that besides the numeric varible norm_samp, the logical va
 ## Problem 2
 
 First, download a package containing the penguins dataset in the console.
-
+Then load this dataset.
 ```{r}
 # load the penguins dataset
 data("penguins", package = "palmerpenguins")
 ```
+The dataset penguins contains 8 variables, among which, "species" and "island" are character variables; "bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g" and "year" are numeric variables; "sex" is factor variable.
 
+For the size of this dataset, `nrow = 344`, and `ncol = 8`, mean flipper length is `r mean(pull(penguins, flipper_length_mm),na.rm = TRUE)`.
