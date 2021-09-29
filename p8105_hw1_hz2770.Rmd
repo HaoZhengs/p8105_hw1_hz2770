@@ -43,10 +43,16 @@ Oops! We can only take the mean of the numeric and logical value in the datafram
 Let's try to apply as.numeric() fuction on all the variables.
 
 ```{r, eval=FALSE}
+as.numeric(x)
 
+as.numeric(y)
+
+as.numeric(z)
+
+as.numeric(w)
 ```
 
-
+We can see from above that besides the numeric varible norm_samp, the logical variable can be view as the numerical values 0 or 1. Therefore, we only can take the mean of numeric and logical variables. Character and factor variables can not be viewed as numeric values, so we can't take their mean.
 
 
 
