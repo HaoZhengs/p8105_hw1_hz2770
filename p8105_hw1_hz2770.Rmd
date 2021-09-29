@@ -66,3 +66,10 @@ data("penguins", package = "palmerpenguins")
 The dataset penguins contains 8 variables, among which, "species" and "island" are character variables; "bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g" and "year" are numeric variables; "sex" is factor variable.
 
 For the size of this dataset, `nrow = 344`, and `ncol = 8`, mean flipper length is `r mean(pull(penguins, flipper_length_mm),na.rm = TRUE)`.
+
+Then we generate the scatter plot of `flipper_length_mm`(y) vs `bill_length_mm`(x) and color the points.
+```{r}
+#  Make a scatterplot
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = "red")) + geom_point()
+```
+
